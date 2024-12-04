@@ -1,0 +1,233 @@
+ :root{    
+    background-color: #52bcec;
+}
+#welcome-body{
+    overflow-x: hidden;
+}
+.main-color{
+    background-color: #52bcec;
+    z-index: 100;
+}
+.background-full{
+    background-image: url(../assets/img/backgound.png);
+    background-size: cover;
+}
+.full-height{
+    height: 100%;
+}
+/* Styling untuk Navbar Brand */
+.navbar-brand {
+    font-size: 2.5rem; /* Ukuran font lebih besar */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #ffffff; /* Warna teks terang */
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6); /* Efek bayangan pada teks */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transisi halus saat hover */
+}
+
+/* Navbar background gelap */
+.navbar {
+    background-color: #343a40; /* Gelap */
+}
+
+/* Efek hover untuk navbar brand */
+.navbar-brand:hover {
+    color: #f8f9fa; /* Warna lebih terang saat hover */
+    transform: scale(1.1); /* Memperbesar ukuran teks saat hover */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Menambah efek bayangan saat hover */
+}
+
+.logo{
+    height: 5rem;
+    aspect-ratio: 1/1;  
+    background-image: url(../assets/img/logo-1.png);
+    background-size: 50%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+.now-suhu{
+    color: #f7f7f7; 
+    right: -20%;
+    top: 30%;
+}
+.dark-color{
+    background-color: #0058aa;
+    z-index: 100;
+}
+.fs-huge{
+    font-size: 80px;
+}
+.header-text{
+    font-size: 40px;
+    font-size: 700;
+}
+.absolute-cloud{
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/img/cloud.png);
+    will-change: background-position;
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    animation: scrollBackground 100s linear infinite ;
+}
+@keyframes scrollBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 1000% 0;
+    }
+  } 
+  /* Custom Input Styles */
+.custom-input {
+    border-radius: 30px;
+    border: 2px solid #007BFF;
+    padding: 12px 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Change border color on focus */
+.custom-input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 91, 182, 0.5);
+}
+
+/* Gradient background for login button */
+.btn-gradient {
+    background: linear-gradient(135deg, #007bff, #00b4d8);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for the button */
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #0056b3, #00a1b2);
+}
+
+/* Shadow for the card */
+.card-body {
+    /* background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1); */
+}
+
+/* Title Styling for Login */
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: 700;
+}
+
+/* Styling for links */
+.btn-link {
+    font-size: 14px;
+}
+
+/* Modern font for the form */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Adjust padding for overall card */
+.card {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+/* Custom styling for the forgot password link */
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Make the form responsive */
+@media (max-width: 576px) {
+    .card-body {
+        padding: 1rem;
+    }
+
+    .custom-input {
+        padding: 10px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+/* Styling for the card */
+.card {
+    border-radius: 15px;
+    /* background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7); */
+}
+
+/* Styling for the input field */
+.custom-input {
+    border-radius: 30px;
+    border: 2px solid #007BFF;
+    padding: 10px 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On focus */
+.custom-input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 91, 182, 0.5);
+}
+
+/* Gradient button styling */
+.btn-gradient {
+    background: linear-gradient(135deg, #007bff, #00b4d8);
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the button */
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #0056b3, #00a1b2);
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 15px rgba(0, 91, 182, 0.2);
+}
+
+/* Form label */
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Title styling */
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #a7c2de;
+}
+.weather{
+    width: 100%;
+    height: 30%;
+    background-image: url(../assets/model/cerah.png);
+}
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .card {
+        padding: 1rem;
+    }
+
+    .btn-gradient {
+        font-size: 14px;
+    }
+}
