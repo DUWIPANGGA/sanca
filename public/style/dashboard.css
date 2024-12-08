@@ -216,11 +216,7 @@ h2 {
     font-weight: bold;
     color: #a7c2de;
 }
-.weather{
-    width: 100%;
-    height: 30%;
-    background-image: url(../assets/model/cerah.png);
-}
+
 /* Responsive adjustments */
 @media (max-width: 576px) {
     .card {

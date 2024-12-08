@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="contact_link_box " >
     <div class="row justify-content-center">
-        <div class="col-md-8">
-                <div class="card-body p-5 shadow-lg">
-                    <h1 class="text-center mb-4 text-primary font-weight-bold">Login</h1> <!-- Added Title -->
+        <div class="col-md-8 ">
+                <div class="card-body p-5 shadow-lg" style="background-color: rgb(37, 150, 190); border-radius: 5rem;">
+                    <h1 class="text-center mb-4 text-light font-weight-bold">Login</h1> <!-- Added Title -->
             
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -56,7 +56,7 @@
                         <!-- Submit Button -->
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-gradient btn-lg px-5 py-2">
+                                <button type="submit" class="btn btn-success px-5 py-2">
                                     {{ __('Login') }}
                                 </button>
             

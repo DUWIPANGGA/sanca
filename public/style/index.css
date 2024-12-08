@@ -128,10 +128,12 @@
 .hero-container{
 }
 .hero{
-  background-color: #00bfff;
-  height: 100vh;
+  background-image: url(../images/hero-bg.png);
+  background-position: 7%;
+  height: 110vh;
   width: 100%;
   margin: 0;
+  margin: 100;
   padding: 0;
 }
 .suhu-hero{

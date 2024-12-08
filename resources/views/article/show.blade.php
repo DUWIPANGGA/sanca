@@ -13,9 +13,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/faicon.png" type="">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="../css/responsive.css" rel="stylesheet" />
     <style>
         body {
             background-color: #f0f4f8;
@@ -75,13 +75,14 @@
 
 <body class="font-sans antialiased">
     <div class="hero_area">
-        <div class="hero_bg_box">
-            <div class="bg_img_box">
-                <img src="images/hero-bg.png" alt="">
+        <div class="hero_bg_box" style="">
+            <div class="bg_img_box h-100 w-100 " style="background-image: url({{ asset('storage/' . $article->picture_article) }}); background-position:center;
+            filter: brightness(50%);
+            ">
             </div>
         </div>
         <main class="m-0 p-0 w-100 hero-container">
-            <header class="header_section" style="">
+            <header class="header_section" style="position:sticky;top:0;">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
                         <header class="py-3 shadow-sm text-white position-sticky top-0" style=" z-index:100">
@@ -98,7 +99,7 @@
                             </div>
                         </header>
                         <a class="navbar-brand" href="">
-                            <img src="images/faicon.png" style="height: 2rem; aspect-ratio: 1/1;" alt="">
+                            <img src="../images/faicon.png" style="height: 2rem; aspect-ratio: 1/1;" alt="">
                             <span>
                                 SANCA
                             </span>
@@ -148,110 +149,41 @@
 
             <!-- Konten Utama -->
             <main class=" m-0 w-100">
+                
                 <section class="slider_section ">
-                    <div class="absolute-cloud"></div>
-
+                    {{-- <div class="absolute-cloud"></div> --}}
                     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="container ">
                                     <div class="row">
                                         <div class="col-md-6 ">
-                                            <div class="detail-box" style="position : relative;z-index: 101;">
-                                                <img id="img_now" src="" alt="" class=""
+                                            {{-- <div class="detail-box" style="position : relative;z-index: 101;"> --}}
+                                                {{-- <img id="img_now" src="" alt="" class=""
                                                     style="height : 100px;aspect-ratio : 1/1;">
                                                 <h1 id="suhu_c">
                                                 </h1>
                                                 <p id="text_detail">
                                                 </p>
                                                 <div class="btn-box">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="img-box">
-                                                <img id="img_suhu" src="images/slider-img.png" alt="">
-                                            </div>
+                                                </div> --}}
+                                            {{-- </div> --}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="carousel-item ">
-                      <div class="container ">
-                        <div class="row">
-                          <div class="col-md-6 ">
-                            <div class="detail-box">
-                              <h1>
-                                SISTEM INFORMASI TANGGAP BENCANA
-                              </h1>
-                              <p>
-                                Bersiap dari Sekarang, Selamatkan Masa Depan – Temukan Sistem Tanggap Bencana Terbaik di SANCA.                    </p>
-                              <div class="btn-box">
-                                <a href="" class="btn1">
-                                  Read More
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="img-box">
-                              <img src="images/slider-img.png" alt="">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="container ">
-                        <div class="row">
-                          <div class="col-md-6 ">
-                            <div class="detail-box">
-                              <h1>
-                                SISTEM INFORMASI TANGGAP BENCANA
-                              </h1>
-                              <p>
-                                Informasi Real-Time, Respon Efektif, Dampak Minimal. Gabung Bersama SACA Hari Ini!                    </p>
-                              <div class="btn-box">
-                                <a href="" class="btn1">
-                                  Read More
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="img-box">
-                              <img src="images/slider-img.png" alt="">
-                            </div>
-                          </div>
-                        </div> --}}
                         </div>
                     </div>
     </div>
-    <ol class="carousel-indicators">
-        <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-        <li data-target="#customCarousel1" data-slide-to="1"></li>
-        <li data-target="#customCarousel1" data-slide-to="2"></li>
-    </ol>
     </div>
 
-    </section>
-    <!-- Artikel -->
-
-    <section class="article-container row d-flex justify-center align-items-start w-100" 
-    style="gap: 20px; flex-wrap: wrap; padding-left: 20px;">
-    <h2 class="mb-3 w-100">Artikel Terkini</h2>
-    @foreach ($articles as $article)
-        <a href="{{ route('article.show.detail',$article->id) }}" class="card" style="width: 300px; height: 400px; display: flex; flex-direction: column; margin: 0; padding:0; ">
-            <img src="{{ asset('storage/' . $article->picture_article) }}" alt="preview img"
-                style="height: 250px; object-fit: cover; object-position: center; margin: 0;" />
-            <div class="card-body" style="flex: 1; padding: 10px;">
-                <h2 class="h1 card-title" style="font-size: 18px; margin-bottom: 10px;">{{ $article->judul }}</h2>
-                <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; max-height: 120px; line-height: 1.5; white-space: normal;">{{ strip_tags($article->content) }}</p>
-            </div>
-        </a>
-    @endforeach
 </section>
-
+<section id="article-main" class="p-7 w-100 h-100" style="padding-left:2% ">
+    <h1 style="font-weight:700;font-size:70px;">{{ $article->judul }}</h1>
+    <div id="content-article">
+        {!! $article->content !!}
+    </div>
+</section>
 
     </main>
     </main>
@@ -267,7 +199,7 @@
             });
         });
     </script>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
@@ -282,7 +214,7 @@
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
     </script>
-    <script src="js/weather.js"></script>
+    {{-- <script src="../js/weather.js"></script> --}}
 </body>
 
 </html>
