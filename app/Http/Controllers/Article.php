@@ -17,10 +17,17 @@ class Article extends Controller
         $articles = ModelsArticle::all();
         return view('article.show', compact('articles'));
     }
+    public function main()
+    {   
+        $articles = ModelsArticle::all();
+        return view('article.index', compact('articles'));
+    }
     public function showDetail($id)
     {
         $article = ModelsArticle::find($id);
-        return view('article.show', compact('article'));
+        $recommendedArticles = ModelsArticle::latest()->take(8)->get();
+
+        return view('article.show', compact('article','recommendedArticles'));
     }
 
     /**
@@ -49,7 +56,9 @@ class Article extends Controller
             'picture_article' => $path,
         ]);
         if ($result) {
-            return redirect()->route('article.insert')->with('success', 'berhasil menyimpan ke database');
+            $article = ModelsArticle::find($result)->first();
+            // dd($article);
+            return redirect()->route('article.show',$article->id)->with('success', 'berhasil menyimpan ke database');
         } else {
             return redirect()->route('article.insert')->with('error', 'gagal menyimpan ke database');
         }
@@ -61,11 +70,13 @@ class Article extends Controller
     public function show(string $id)
     {
         $article = ModelsArticle::find($id);
+        $recommendedArticles = ModelsArticle::latest()->take(8)->get();
+
         if (isset($article)) {
-            return view('article.edit', compact('article'));
-        } else {
+            return view('article.edit', compact('article', 'recommendedArticles'));
+        } else {    
             $articles = ModelsArticle::all();
-            return view('article.index', compact('articles'));
+            return view('article.index', compact('articles', 'recommendedArticles'));
         }
     }
 
@@ -100,7 +111,7 @@ class Article extends Controller
             $article->picture_article = $path;
         }
         $article->save();
-        return redirect()->route('article.index')->with('success', 'Article updated successfully');
+        return redirect()->route('article.main')->with('success', 'Article updated successfully');
     }
 
     /**
@@ -111,6 +122,6 @@ class Article extends Controller
         $article = ModelsArticle::findOrFail($id);
         $article->delete();
 
-        return redirect()->route('article.index')->with('success', 'Article deleted successfully');
+        return redirect()->route('article.main')->with('success', 'Article deleted successfully');
     }
 }

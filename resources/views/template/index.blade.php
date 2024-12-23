@@ -35,7 +35,6 @@
   
 .absolute-cloud{
     position: absolute;
-    pointer-events: none;
     left: 0;
     top: 0;
     width: 100%;
@@ -46,7 +45,10 @@
     background-size: cover;
     background-repeat: repeat;
     animation: scrollBackground 100s linear infinite ;
-}
+    pointer-events: none;
+    z-index: 1;
+  }
+  
 @keyframes scrollBackground {
     from {
       background-position: 0 0;

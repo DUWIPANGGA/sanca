@@ -1,7 +1,7 @@
 function getWeatherForecast(lat, long) {
     const data = new URLSearchParams({
         key: '9410bc1b2b0e4f2583190037240712',
-        q: lat + "," + long
+        q: lat + "," + long,
     }).toString();
     const url = `https://api.weatherapi.com/v1/current.json?${data}`;
     fetch(url, {
